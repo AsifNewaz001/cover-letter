@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asif Newaz - Cover Letter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- DESIGN TOKENS --- */
+        :root {
+            --font-main: 'Inter', sans-serif;
+            --bg-dark: #080808;
+            --accent-teal: #07e6c4;
+
+            /* SOPHISTICATED GLASS TOKENS */
+            --glass-surface: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+            --glass-blur: 40px;
+            --glass-edge-light: inset 1px 1px 1px rgba(255, 255, 255, 0.15), inset -1px -1px 1px rgba(0,0,0,0.2);
+            --glass-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+
+            --text-white: #ffffff;
+            --text-gray: #f2f2f5;
+            --text-muted: #a1a1aa;
+        }
+
+        /* --- LAYOUT RESET --- */
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* --- DYNAMIC BACKGROUND LAYERS --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: -20%;
+            width: 70vw;
+            height: 70vh;
+            background: radial-gradient(circle, rgba(7, 230, 196, 0.15), transparent 60%);
+            filter: blur(80px);
+            z-index: -1;
+            animation: drift 25s infinite alternate ease-in-out;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -10%;
+            right: -10%;
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(30, 60, 100, 0.12), transparent 60%);
+            filter: blur(80px);
+            z-index: -2;
+            animation: drift 30s infinite alternate-reverse ease-in-out;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(5%, 5%); }
+        }
+
+        /* Main Layout Container */
+        .letter-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 60px 20px;
+            height: fit-content;
+        }
+
+        /* --- SOPHISTICATED GLASS PANELS --- */
+        .glass-panel {
+            background: var(--glass-surface);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-edge-light), var(--glass-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glass-edge-light), 0 30px 60px -12px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .role-badge {
+            display: inline-block;
+            background: rgba(7, 230, 196, 0.1);
+            color: var(--accent-teal);
+            border: 1px solid rgba(7, 230, 196, 0.25);
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: 32px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item span {
+            color: var(--accent-teal);
+            font-size: 1rem;
+        }
+
+        .date-location {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .recipient {
+            margin-bottom: 32px;
+        }
+
+        .recipient-line {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 2px;
+        }
+
+        .salutation {
+            font-size: 1.05rem;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+
+        .letter-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+        }
+
+        .letter-body p {
+            margin-bottom: 20px;
+        }
+
+        .letter-body strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .closing {
+            margin-top: 32px;
+        }
+
+        .closing-phrase {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 48px;
+        }
+
+        .signature {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        a {
+            color: var(--text-white);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-teal);
+            transition: 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-teal);
+            background: rgba(7, 230, 196, 0.1);
+        }
+
+        /* Download Button */
+        .download-btn {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            color: var(--accent-teal);
+            font-family: var(--font-main);
+            font-weight: 600;
+            border: 1px solid rgba(7, 230, 196, 0.3);
+            padding: 12px 24px;
+            border-radius: 99px;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background: var(--accent-teal);
+            color: #000;
+            box-shadow: 0 10px 30px -5px rgba(7, 230, 196, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* --- PRINT STYLES (Optimized for Single A4 Page) --- */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: radial-gradient(ellipse at 20% 30%, rgba(7, 230, 196, 0.08) 0%, transparent 50%),
+                            radial-gradient(ellipse at 80% 70%, rgba(30, 60, 100, 0.06) 0%, transparent 50%),
+                            #050505 !important;
+                color: #ffffff !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: visible !important;
+            }
+
+            body::before, body::after { display: none !important; }
+
+            @page {
+                margin: 0 !important;
+                size: A4 portrait !important;
+            }
+
+            .letter-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 18px 22px !important;
+            }
+
+            .glass-panel {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.015) 100%) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                box-shadow:
+                    inset 0 1px 1px rgba(255, 255, 255, 0.12),
+                    inset 0 -1px 1px rgba(0, 0, 0, 0.1),
+                    0 6px 24px rgba(0, 0, 0, 0.25) !important;
+                backdrop-filter: none !important;
+                color: #ffffff !important;
+                border-radius: 12px !important;
+                padding: 24px 28px !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Compact header */
+            h1 {
+                font-size: 1.85rem !important;
+                margin-bottom: 5px !important;
+                line-height: 1 !important;
+            }
+
+            .role-badge {
+                padding: 4px 12px !important;
+                font-size: 0.75rem !important;
+                margin-bottom: 18px !important;
+                background: linear-gradient(135deg, rgba(7, 230, 196, 0.15), rgba(7, 230, 196, 0.08)) !important;
+                border: 1px solid rgba(7, 230, 196, 0.35) !important;
+                box-shadow:
+                    inset 0 1px 0 rgba(7, 230, 196, 0.2),
+                    0 2px 8px rgba(7, 230, 196, 0.15) !important;
+            }
+
+            .contact-info {
+                gap: 12px !important;
+                font-size: 0.73rem !important;
+                margin-bottom: 20px !important;
+                padding-bottom: 14px !important;
+                border-bottom: 1px solid rgba(7, 230, 196, 0.2) !important;
+            }
+
+            .contact-item span {
+                font-size: 0.85rem !important;
+            }
+
+            .date-location {
+                font-size: 0.78rem !important;
+                margin-bottom: 18px !important;
+            }
+
+            .recipient {
+                margin-bottom: 18px !important;
+            }
+
+            .recipient-line {
+                font-size: 0.78rem !important;
+            }
+
+            .salutation {
+                font-size: 0.85rem !important;
+                margin-bottom: 14px !important;
+            }
+
+            .letter-body {
+                font-size: 0.8rem !important;
+                line-height: 1.48 !important;
+            }
+
+            .letter-body p {
+                margin-bottom: 12px !important;
+            }
+
+            .closing {
+                margin-top: 18px !important;
+            }
+
+            .closing-phrase {
+                font-size: 0.8rem !important;
+                margin-bottom: 28px !important;
+            }
+
+            .signature {
+                font-size: 0.9rem !important;
+            }
+
+            .download-btn { display: none !important; }
+            a { text-decoration: none !important; border-bottom: none !important; }
+
+            h1, strong { color: #ffffff !important; }
+            .role-badge, .contact-item span {
+                color: #07e6c4 !important;
+                -webkit-text-fill-color: #07e6c4 !important;
+            }
+
+            /* Force single page */
+            html, body {
+                height: 297mm !important;
+                overflow: hidden !important;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .letter-wrapper { margin: 80px 20px 40px 20px; }
+            .glass-panel { padding: 24px; }
+            .contact-info { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="printBtn" class="download-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+    </button>
+
+    <div class="letter-wrapper">
+        <div class="glass-panel">
+            <!-- HEADER -->
+            <header>
+                <h1>Asif Newaz</h1>
+                <div class="role-badge">CSPO | AI Technical Product Manager</div>
+
+                <div class="contact-info">
+                    <div class="contact-item"><span>📧</span> <a href="mailto:asifnewazsameer@gmail.com">asifnewazsameer@gmail.com</a></div>
+                    <div class="contact-item"><span>📱</span> +880-1315595046</div>
+                    <div class="contact-item"><span>🔗</span> <a href="https://linkedin.com/in/asif-newaz" target="_blank">linkedin.com/in/asif-newaz</a></div>
+                </div>
+            </header>
+
+            <!-- DATE & LOCATION -->
+            <div class="date-location">
+                November 23, 2024<br>
+                Dhaka, Bangladesh
+            </div>
+
+            <!-- RECIPIENT -->
+            <div class="recipient">
+                <div class="recipient-line">Hiring Manager</div>
+                <div class="recipient-line">Technical Product Management Team</div>
+                <div class="recipient-line">MoneyLion</div>
+            </div>
+
+            <!-- SALUTATION -->
+            <div class="salutation">Dear Hiring Manager,</div>
+
+            <!-- LETTER BODY -->
+            <div class="letter-body">
+                <p>
+                    I am excited to apply for the <strong>Technical Product Manager, Machine Learning</strong> role at MoneyLion. I have over six years of experience in fintech product management, with a strong focus on ML-driven risk, settlements, and payments. In my current role at Pathao Limited, I work closely with data scientists, MLOps engineers, and backend teams to shape and deliver machine-learning-powered fraud and risk systems. MoneyLion's mission to help people make better financial decisions with personalized, AI-enabled products aligns directly with the kind of work I already do and the direction I want to grow in.
+                </p>
+
+                <p>
+                    At <strong>Pathao</strong>, I serve as Product Manager for Instapay and Advance (instant settlement and invoice-style financing) and for an internal ML-plus-rules risk initiative (FraudChain). I work across the ML product lifecycle with the team: framing problems, defining scope and success metrics, planning delivery, and coordinating shadow, canary, and full rollouts. I partner with data scientists and MLOps engineers to integrate machine-learning-based fraud checks into real-time decision flows while staying within agreed SLOs, and I help ensure that governance steps around data, model behavior, and deployment (documentation, approvals, and rollback paths) are built into our project plans rather than added at the end. These efforts, along with experiment-driven onboarding and routing improvements, have supported scaling to over 120,000 daily orders, reduced onboarding drop-off by roughly 25%, and contributed to double-digit revenue growth.
+                </p>
+
+                <p>
+                    Previously, as <strong>Regional Product Manager at Daraz (Alibaba Group)</strong>, I managed Seller Finance and Settlement across five countries, translating complex tax and compliance rules into clear requirements for backend logic and reporting. At <strong>ShareTrip & ST Pay</strong>, I led product for a PCI-DSS compliant wallet and payment stack handling over $10M in annual transaction volume, working with engineering and security on tokenization, encryption, risk checks. Across these roles, I have become comfortable working in regulated environments with PCI-DSS, KYC/AML, and audit expectations.
+                </p>
+
+                <p>
+                    Day to day, I try to operate the way you describe in the job description: facilitating communication across data scientists, engineers, and product stakeholders; managing cross-team dependencies and timelines; and gathering, synthesizing, and prioritizing feedback from internal users of risk and ML tools into platform backlogs. I am familiar with core MLOps concepts (experiment tracking, model lifecycle, monitoring and drift) and tools such as MLflow and Fairlearn, as well as LLM/RAG patterns with vector databases like pgvector or Redis, through proofs of concept and self-directed learning. My goal as a TPM is to make ML systems reliable, explainable, and usable in real products, not just technically impressive.
+                </p>
+
+                <p>
+                    If required, I am ready to relocate to Kuala Lumpur. I would welcome the opportunity to discuss how your ML TPMs support the development and maintenance of MoneyLion's ML systems and infrastructure, how you approach governance and monitoring across the ML lifecycle, and how I can help scale internal ML platform tools and practices across teams. Thank you for your time and consideration.
+                </p>
+            </div>
+
+            <!-- CLOSING -->
+            <div class="closing">
+                <div class="closing-phrase">Sincerely,</div>
+                <div class="signature">Asif Newaz</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('printBtn').addEventListener('click', function() {
+            window.focus();
+            setTimeout(function() {
+                window.print();
+            }, 100);
+        });
+    </script>
+</body>
+</html>
