@@ -286,6 +286,17 @@
                 border-radius: 12px !important;
                 padding: 24px 28px !important;
                 page-break-inside: avoid !important;
+                position: relative !important;
+            }
+
+            /* Subtle inner glow for premium feel in print */
+            .glass-panel::before {
+                content: '' !important;
+                position: absolute !important;
+                inset: 0 !important;
+                border-radius: 12px !important;
+                background: radial-gradient(circle at 30% 40%, rgba(7, 230, 196, 0.05), transparent 60%) !important;
+                pointer-events: none !important;
             }
 
             /* Compact header */
